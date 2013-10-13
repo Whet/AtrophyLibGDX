@@ -1,6 +1,7 @@
 package com.graphics;
 
 import com.actions.MouseCollection;
+import com.atrophy.graphics.Fonts;
 import com.atrophy.screens.SplashScreen;
 import com.badlogic.gdx.ApplicationListener;
 import com.badlogic.gdx.Game;
@@ -30,6 +31,8 @@ public class WatGame extends Game implements ApplicationListener, InputProcessor
         rootMouse = new MouseCollection();
         
         Gdx.input.setInputProcessor(this);
+        
+        Fonts.loadFonts();
         
         this.setScreen(new SplashScreen(this));
         

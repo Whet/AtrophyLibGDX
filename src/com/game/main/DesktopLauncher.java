@@ -27,6 +27,7 @@ public class DesktopLauncher {
 		config.fullscreen = fullscreen;
 		
 		new LwjglApplication(listener, config);
+		
 	}
 	
 }

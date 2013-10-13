@@ -2,7 +2,7 @@ package com.actions;
 
 import com.badlogic.gdx.math.Rectangle;
 
-public abstract class MouseRegion implements MouseRespondable {
+public class MouseRegion implements MouseRespondable {
 
 	private Rectangle hitbox;
 	

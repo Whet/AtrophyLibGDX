@@ -33,7 +33,7 @@ public class SetupWindow extends JFrame {
 
 	public SetupWindow(){
 		
-		windowedMode = true;
+		windowedMode = false;
 		resolutionMode = new int[2];
 		resolutionMode[0] = 1280;
 		resolutionMode[1] = 720;
@@ -65,7 +65,7 @@ public class SetupWindow extends JFrame {
 		
 		
 		
-		windowed = new JButton("Windowed: True");
+		windowed = new JButton("Windowed: False");
 		resolution = new JComboBox<>();
 		start = new JButton("Start Atrophy");
 		

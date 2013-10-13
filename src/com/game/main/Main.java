@@ -6,7 +6,7 @@ public class Main {
 
 	public static void main(String[] args) {
 		@SuppressWarnings("unused")
-		SetupWindow setupWindow = new SetupWindow();
+		SetupWindow setupWindow = new SetupWindow();		
 	}
 	
 }
