@@ -7,6 +7,7 @@ import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.InputProcessor;
 import com.badlogic.gdx.graphics.GL20;
+import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 public class WatGame extends Game implements ApplicationListener, InputProcessor {
@@ -18,6 +19,8 @@ public class WatGame extends Game implements ApplicationListener, InputProcessor
 	
     @Override
     public void create() {
+    	
+    	Texture.setEnforcePotImages(false);
     	
     	stateTime = 0f;
     	
