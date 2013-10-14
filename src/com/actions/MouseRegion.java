@@ -25,4 +25,27 @@ public class MouseRegion implements MouseRespondable {
 		return false;
 	}
 
+	@Override
+	public void mI(int x, int y) {
+	}
+
+	@Override
+	public void mO(int x, int y) {
+	}
+	
+	public void setWidth(int width) {
+		this.hitbox.setWidth(width);
+	}
+
+	public void setHeight(int height) {
+		this.hitbox.setHeight(height);
+	}
+
+	public void setX(int x) {
+		this.hitbox.setX(x);
+	}
+	
+	public void setY(int y) {
+		this.hitbox.setY(y);
+	}
 }

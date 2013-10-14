@@ -1,14 +1,8 @@
 package com.atrophy.screens;
 
-import java.io.File;
-
-import com.atrophy.graphics.Fonts;
+import com.atrophy.graphics.DefaultTextButton;
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.files.FileHandle;
-import com.badlogic.gdx.graphics.g2d.BitmapFont;
-import com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGenerator;
 import com.graphics.SingleImage;
-import com.graphics.Text;
 import com.graphics.WatGame;
 import com.graphics.WatScreen;
 
@@ -26,11 +20,35 @@ public class SplashScreen extends WatScreen {
 		image.setSize(Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
 		this.getDrawList().addDisplayable(image);
 		
-		Text text = new Text(Fonts.FONT_24);
-		text.setText("Test");
-		text.setX(300);
-		text.setY(500);
-		this.getDrawList().addDisplayable(text);
+		DefaultTextButton startGameBtn = new DefaultTextButton(200, 200) {
+			
+			@Override
+			protected boolean mouseDown(int x, int y) {
+				game.setScreen(new CharacterCreateScreen(game));
+				return super.mouseDown(x, y);
+			}
+		
+		};
+		this.getDrawList().addDisplayable(startGameBtn.getText());
+		this.getMouseList().addRespondable(startGameBtn.getHitbox());
+		startGameBtn.setText("New Game");
+		startGameBtn.setX(40);
+		startGameBtn.setY(Gdx.graphics.getHeight() - 100);
+		
+		DefaultTextButton loadGameBtn = new DefaultTextButton(200, 200) {
+			
+			@Override
+			protected boolean mouseDown(int x, int y) {
+				System.out.println("Load game");
+				return super.mouseDown(x, y);
+			}
+		
+		};
+		this.getDrawList().addDisplayable(loadGameBtn.getText());
+		this.getMouseList().addRespondable(loadGameBtn.getHitbox());
+		loadGameBtn.setText("Load Game");
+		loadGameBtn.setX(40);
+		loadGameBtn.setY(Gdx.graphics.getHeight() - 200);
 		
 	}
 

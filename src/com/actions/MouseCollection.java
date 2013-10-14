@@ -37,5 +37,21 @@ public class MouseCollection implements MouseRespondable {
 	public boolean isInBounds(int x, int y) {
 		return true;
 	}
+
+	@Override
+	public void mI(int x, int y) {
+		for(MouseRespondable mouseRespondable: this.actionList) {
+			if(mouseRespondable.isInBounds(x, y))
+				mouseRespondable.mI(x, y);
+		}
+	}
+
+	@Override
+	public void mO(int x, int y) {
+		for(MouseRespondable mouseRespondable: this.actionList) {
+			if(!mouseRespondable.isInBounds(x, y))
+				mouseRespondable.mO(x, y);
+		}
+	}
 	
 }

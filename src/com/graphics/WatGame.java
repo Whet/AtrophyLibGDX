@@ -17,6 +17,7 @@ public class WatGame extends Game implements ApplicationListener, InputProcessor
 	private SpriteBatch spriteBatch;
 	DrawCollection rootDraw;
     MouseCollection rootMouse;
+    private int mouseX, mouseY;
 	
     @Override
     public void create() {
@@ -39,7 +40,7 @@ public class WatGame extends Game implements ApplicationListener, InputProcessor
     }
  
     @Override
-    public void resize( int width, int height) {
+    public void resize(int width, int height) {
     }
  
     @Override
@@ -51,6 +52,11 @@ public class WatGame extends Game implements ApplicationListener, InputProcessor
         // output the current FPS
 //        fpsLogger.log();
         
+        mouseX = Gdx.input.getX();
+        mouseY = Gdx.graphics.getHeight() - Gdx.input.getY();
+        
+        rootMouse.mI(mouseX, mouseY);
+        rootMouse.mO(mouseX, mouseY);
         
         stateTime += Gdx.graphics.getDeltaTime();
         
@@ -101,7 +107,7 @@ public class WatGame extends Game implements ApplicationListener, InputProcessor
 
 	@Override
 	public boolean touchDown(int arg0, int arg1, int arg2, int arg3) {
-		return this.rootMouse.mD(Gdx.input.getX(), Gdx.input.getY());
+		return this.rootMouse.mD(mouseX, mouseY);
 	}
 
 	@Override
@@ -111,7 +117,7 @@ public class WatGame extends Game implements ApplicationListener, InputProcessor
 
 	@Override
 	public boolean touchUp(int arg0, int arg1, int arg2, int arg3) {
-		return this.rootMouse.mU(Gdx.input.getX(), Gdx.input.getY());
+		return this.rootMouse.mU(mouseX, mouseY);
 	}
     
 
